@@ -1,4 +1,4 @@
-## Bulk RNA-seq Analysis Gene Mapping Tutorial 
+## Bulk RNA-seq Gene Mapping and Analyis Tutorial 
 
   
 
