@@ -1,4 +1,4 @@
-# Bulk RNA-seq Analysis
+# Bulk RNA-seq Analysis Gene Mapping
 
 This repository contains a script for performing bulk RNA-seq analysis using DESeq2 and local gene annotation mapping.
 
