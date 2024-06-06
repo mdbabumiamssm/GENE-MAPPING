@@ -103,3 +103,6 @@ The analysis results will be saved in the `results` directory within your workin
 ### Conclusion: 
 
 By following this tutorial, you have successfully performed a bulk RNA-seq analysis using DESeq2 and mapped gene annotations locally. This process is crucial for understanding gene expression changes under different conditions. 
+
+
+# I didn't wait till publication to share the code.. Please contact if you used the code and want to publish! Thank you - md.babu.mia@mssm.edu
