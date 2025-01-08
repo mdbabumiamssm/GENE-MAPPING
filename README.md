@@ -1,108 +1,58 @@
-## Bulk RNA-seq Gene Mapping and Analyis Tutorial 
+# GENE-MAPPING
 
-  
+## Overview
 
-### Objective: 
+GENE-MAPPING is a Bioconductor package that provides tools for bulk RNA-seq analysis with automatic gene mapping from Ensembl IDs to gene symbols. The package integrates with DESeq2 for differential expression analysis and provides comprehensive visualization tools.
 
-In this tutorial, you will learn how to perform bulk RNA-seq analysis using DESeq2 and local gene annotation mapping. I will guide you through setting up your environment, running the analysis, and interpreting the results. 
+## Features
 
-  
+- Bulk RNA-seq data analysis using DESeq2
+- Automatic gene mapping from Ensembl IDs to gene symbols
+- Local gene annotation mapping using GTF files
+- Comprehensive visualization tools
+- Statistical analysis and reporting
 
-### Steps: 
+## Installation
 
-  
+You can install the package from Bioconductor:
 
-1. **Clone the Repository:** 
+```r
+if (!require("BiocManager"))
+    install.packages("BiocManager")
+BiocManager::install("GENE-MAPPING")
+```
 
-   Open a terminal and run the following command to download the project to your local machine: 
+## Usage
 
-   ```sh 
+Basic usage example:
 
-   git clone https://github.com/mdbabumiamssm/GENE-MAPPING.git 
+```r
+library(GENE-MAPPING)
 
-   ``` 
+results <- bulkRNAseqAnalysis(
+    work_dir = "path/to/working/directory",
+    metadata_file = "metadata.csv",
+    gtf_file = "annotation.gtf.gz"
+)
+```
 
-  
+## Documentation
 
-2. **Open RStudio:** 
+For detailed documentation, please refer to the package vignette:
 
-   Navigate to the `GENE-MAPPING` directory in the terminal and open RStudio: 
+```r
+browseVignettes("GENE-MAPPING")
+```
 
-   ```sh 
+## Contributing
 
-   cd GENE-MAPPING 
+Please feel free to submit issues and pull requests to our GitHub repository.
 
-   rstudio . 
+## License
 
-   ``` 
+This package is licensed under the Artistic-2.0 License.
 
-  
+## Author
 
-3. **Set the Working Directory:** 
-
-   In RStudio, set the working directory to the `GENE-MAPPING` directory: 
-
-   ```r 
-
-   setwd("/path/to/GENE-MAPPING")  # Replace with your actual path 
-
-   ``` 
-
-  
-
-4. **Install Required Packages:** 
-
-   Install the necessary R packages by running: 
-
-   ```r 
-
-   install.packages(c("DESeq2", "AnnotationDbi", "org.Hs.eg.db", "umap", "ggplot2", "gplots", "RColorBrewer", "VennDiagram", "fgsea", "rtracklayer")) 
-
-   ``` 
-
-  
-
-5. **Load and Source the Script:** 
-
-   Open the `bulkRNAseqAnalysis.R` script in RStudio and source it to load the function: 
-
-   ```r 
-
-   source("bulkRNAseqAnalysis.R") 
-
-   ``` 
-
-  
-
-6. **Run the Analysis:** 
-
-   Call the `bulkRNAseqAnalysis` function with the required parameters. Make sure to replace the paths with your actual paths: 
-
-   ```r 
-
-   bulkRNAseqAnalysis( 
-
-     work_dir = "/path/to/GENE-MAPPING", 
-
-     metadata_file = "group1metadata.csv", 
-
-     gtf_file = "/path/to/Homo_sapiens.GRCh38.112.gtf.gz"  # Ensure you provide the correct path to the GTF file 
-
-   ) 
-
-   ``` 
-
-  
-
-### Results: 
-
-The analysis results will be saved in the `results` directory within your working directory. You can find the differential expression results and significant genes in the output files. 
-
-  
-
-### Conclusion: 
-
-By following this tutorial, you have successfully performed a bulk RNA-seq analysis using DESeq2 and mapped gene annotations locally. This process is crucial for understanding gene expression changes under different conditions. 
-
-
-# I didn't wait till publication to share the code.. Please contact if you used the code and want to publish! Thank you - md.babu.mia@mssm.edu
+MD Babu Mia  
+Contact: mdbabumia777@gmail.com

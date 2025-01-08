@@ -1,0 +1,6 @@
+Changes in version 0.99.0 (2024-01-07)
++ Submitted to Bioconductor
++ Initial version with basic RNA-seq analysis functionality
++ Added DESeq2 integration
++ Added gene mapping functionality
++ Added visualization tools

@@ -1,0 +1,87 @@
+---
+title: "Using GENE-MAPPING for Bulk RNA-seq Analysis"
+author: "MD Babu Mia"
+date: "`r Sys.Date()`"
+output: 
+    BiocStyle::html_document:
+        toc: true
+vignette: >
+    %\VignetteIndexEntry{Using GENE-MAPPING for Bulk RNA-seq Analysis}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+)
+```
+
+## Introduction
+
+The GENE-MAPPING package provides tools for analyzing bulk RNA-seq data and mapping genes
+from Ensembl IDs to gene symbols. This vignette demonstrates the basic workflow and
+key functionalities of the package.
+
+## Installation
+
+```{r installation, eval=FALSE}
+if (!require("BiocManager"))
+    install.packages("BiocManager")
+BiocManager::install("GENE-MAPPING")
+```
+
+## Basic Usage
+
+Here's a basic example using the package's main function:
+
+```{r basic-usage, eval=FALSE}
+library(GENE-MAPPING)
+
+# Get example data path
+data_dir <- system.file("extdata", package = "GENE-MAPPING")
+
+# Run analysis
+results <- bulkRNAseqAnalysis(
+    work_dir = data_dir,
+    metadata_file = file.path(data_dir, "metadata.csv"),
+    gtf_file = file.path(data_dir, "annotation.gtf.gz")
+)
+```
+
+## Input Data Requirements
+
+The package expects the following input files:
+
+1. Count data files (*.txt format)
+2. Metadata file (CSV format)
+3. GTF annotation file
+
+### Metadata File Format
+
+The metadata file should be a CSV with the following structure:
+
+```{r metadata-example, eval=FALSE}
+Sample,Condition
+sample1,TREATED
+sample2,TREATED
+sample3,CONTROL
+sample4,CONTROL
+```
+
+## Output
+
+The function returns a list containing:
+
+- DESeq2 results table
+- Differentially expressed genes
+- Analysis summary statistics
+
+Results are also saved to disk in the specified working directory.
+
+## Session Info
+
+```{r session-info}
+sessionInfo()
+```

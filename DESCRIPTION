@@ -1,0 +1,55 @@
+Package: GENE-MAPPING
+Type: Package
+Title: Bulk RNA-seq Analysis with Gene Mapping from Ensembl to R Studio
+Version: 0.99.0
+Date: 2024-01-07
+Authors@R: person(
+    "MD Babu", "Mia",
+    email = "mdbabumia777@gmail.com",
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0003-2083-8188")
+  )
+Description: A comprehensive tool for bulk RNA-seq analysis that facilitates 
+    gene mapping from Ensembl to R Studio. The package provides functions for 
+    differential expression analysis using DESeq2, local gene annotation 
+    mapping, and visualization tools. Features include data preprocessing,
+    statistical analysis, and generation of publication-ready visualizations.
+License: Artistic-2.0
+Encoding: UTF-8
+LazyData: false
+BuildVignettes: true
+biocViews:
+    RNASeq,
+    DifferentialExpression,
+    GeneExpression,
+    Visualization,
+    Preprocessing,
+    Annotation,
+    Sequencing
+Depends:
+    R (>= 4.3.0),
+    SummarizedExperiment
+Imports:
+    DESeq2,
+    AnnotationDbi,
+    org.Hs.eg.db,
+    umap,
+    ggplot2,
+    gplots,
+    RColorBrewer,
+    VennDiagram,
+    fgsea,
+    rtracklayer,
+    methods,
+    stats,
+    utils
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown,
+    BiocStyle,
+    BiocGenerics
+RoxygenNote: 7.2.3
+VignetteBuilder: knitr
+URL: https://github.com/mdbabumiamssm/GENE-MAPPING
+BugReports: https://github.com/mdbabumiamssm/GENE-MAPPING/issues
